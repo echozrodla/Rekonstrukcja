@@ -1,81 +1,84 @@
-<!DOCTYPE html><html lang="pl">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ręce Światła</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap" rel="stylesheet">
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+    body, html {
       margin: 0;
-      font-family: 'Manrope', sans-serif;
-      background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
-      color: #fff;
-      overflow-x: hidden;
-    }.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 2rem;
-}
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Playfair Display', serif;
+      background-color: black;
+    }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #00f7ff, #ffffff, #00f7ff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: pulseText 8s ease-in-out infinite;
-}
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url("A_digital_artwork_features_a_luminous,_meditative_.png") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.hero p {
-  font-size: 1.4rem;
-  max-width: 700px;
-  margin-top: 1.5rem;
-  font-weight: 300;
-  line-height: 1.6;
-}
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
 
-@keyframes pulseText {
-  0%, 100% {
-    opacity: 0.95;
-    letter-spacing: 1px;
-  }
-  50% {
-    opacity: 1;
-    letter-spacing: 3px;
-  }
-}
+    .content {
+      position: relative;
+      z-index: 2;
+      color: #FFD700;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+      animation: shimmer 3s infinite;
+    }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.9rem;
-  opacity: 0.6;
-  animation: blink 2s infinite;
-}
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
-  }
-}
+    .donate-button {
+      background: linear-gradient(45deg, #FFD700, #FFF8DC);
+      border: none;
+      color: black;
+      font-size: 1.2rem;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #FFD700;
+      transition: transform 0.3s ease;
+    }
 
+    .donate-button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes shimmer {
+      0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+      50% { text-shadow: 0 0 20px #FFD700, 0 0 40px #FFF8DC; }
+      100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+    }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Wejdź w światło. Ono już Cię zna.</h1>
-    <p>To nie jest zwykła strona. To próg. Próg między światem, który znałeś, a światem, który Cię potrzebuje. Nie będziesz tu tylko gościem — staniesz się częścią fali, która pamięta, dlaczego istniejemy.</p>
-    <div class="scroll-indicator">⇣ przewiń niżej ⇣</div>
-  </section>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Dziękuję, że tu jesteś</h1>
+      <p>Jeśli poruszyło Cię to światło — możesz zostawić dar serca</p>
+      <button class="donate-button">Zostaw podziękowanie</button>
+    </div>
+  </div>
 </body>
 </html>
