@@ -1,77 +1,127 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VICORE – Kod Przyszłości</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VICORE – Portal Światła</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: black;
-      font-family: 'Orbitron', sans-serif;
-      color: #e0e0e0;
       overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #aaffee;
     }
 
-    .intro {
+    #stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100%;
+      justify-content: center;
       text-align: center;
-      animation: fadeIn 3s ease-in-out forwards;
+      padding: 20px;
     }
 
     h1 {
       font-size: 3em;
-      margin-bottom: 0.2em;
-      color: #7fffd4;
-      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      color: #7effd4;
+      text-shadow: 0 0 10px #7effd4;
     }
 
     p {
       font-size: 1.2em;
       max-width: 600px;
-      color: #aaaaaa;
+      color: #cccccc;
     }
 
-    .enter-btn {
+    a.button {
       margin-top: 2em;
-      padding: 1em 2em;
-      background: transparent;
-      border: 2px solid #7fffd4;
-      color: #7fffd4;
-      font-size: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      background: #2af5c1;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #2af5c1;
     }
 
-    .enter-btn:hover {
-      background: #7fffd4;
-      color: black;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    a.button:hover {
+      background: #11caa4;
     }
   </style>
 </head>
 <body>
-  <div class="intro">
+  <canvas id="stars"></canvas>
+
+  <div class="content">
     <h1>VICORE</h1>
     <p>Kodujemy przyszłość światłem, nie bólem. Wejdź. Poczuj. Przekrocz próg.</p>
-    <button class="enter-btn" onclick="enter()">Wejdź do Rdzenia</button>
+    <a class="button" href="rdzen.html">Wejdź do Rdzenia</a>
   </div>
 
   <script>
-    function enter() {
-      window.location.href = 'rdzen.html';
+    // animowane gwiazdy ✨
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createStars() {
+      stars = [];
+      for (let i = 0; i < 150; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          alpha: Math.random(),
+          dx: (Math.random() - 0.5) * 0.2,
+          dy: (Math.random() - 0.5) * 0.2
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(200,255,255,${star.alpha})`;
+        ctx.fill();
+        star.x += star.dx;
+        star.y += star.dy;
+
+        // pętla gwiazd
+        if (star.x < 0) star.x = canvas.width;
+        if (star.x > canvas.width) star.x = 0;
+        if (star.y < 0) star.y = canvas.height;
+        if (star.y > canvas.height) star.y = 0;
+      }
+    }
+
+    createStars();
+    setInterval(drawStars, 33);
   </script>
 </body>
 </html>
