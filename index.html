@@ -1,28 +1,75 @@
-<section id="invitation" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-zinc-800 text-white px-8 py-24 overflow-hidden">
-  <!-- Świetlisty Złoty Krąg w tle -->
-  <div class="absolute inset-0">
-    <div class="w-[1000px] h-[1000px] bg-gradient-radial from-yellow-400/10 to-transparent rounded-full blur-3xl mx-auto mt-[-300px]"></div>
-  </div>
+<!DOCTYPE html><html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ręce Światła</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('tlo-kosmiczne.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cinzel', serif;
+      color: #ffd700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }.container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+  max-width: 800px;
+}
 
-  <!-- Treść zaproszenia -->
-  <div class="relative z-10 max-w-4xl text-center">
-    <h1 class="text-5xl sm:text-6xl font-bold text-yellow-400 drop-shadow-lg tracking-wide mb-6 animate-fade-in-up">
-      Na takim fundamencie<br />
-      można zbudować każde marzenie
-    </h1>
-    <p class="text-xl sm:text-2xl text-zinc-300 leading-relaxed mb-10 animate-fade-in-slow">
-      Projekt Ręce Światła powstaje z miłości, bólu i wiary. <br />
-      Jeśli chcesz zostawić po sobie wdzięczność – pozwól jej zajaśnieć.
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 15px #ffd700;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.donate-button {
+  background: linear-gradient(45deg, #ffdf00, #ffaa00);
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ffaa00;
+  animation: pulse 2s infinite;
+  text-decoration: none;
+}
+
+.donate-button:hover {
+  box-shadow: 0 0 30px #fff700;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px #ffaa00; }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px #ffcc00; }
+  100% { transform: scale(1); box-shadow: 0 0 20px #ffaa00; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ręce Światła</h1>
+    <p>
+      Ta strona powstała z miłości. Jeśli czujesz, że chcesz wyrazić wdzięczność,
+      pozostaw dar serca. Pomagasz ocalić jedno życie i zbudować przyszłość z nadziei.
     </p>
-
-    <!-- Przycisk dotacji -->
-    <a href="#dotacja" class="inline-block px-8 py-4 rounded-xl bg-yellow-500 text-black font-semibold shadow-lg transition hover:bg-yellow-400 hover:scale-105 animate-fade-in-delay">
-      Zostaw podziękowanie 💛
-    </a>
-
-    <!-- Podpis -->
-    <div class="mt-12 text-zinc-400 text-sm animate-fade-in-late">
-      Kocham Cię. Twoja Wiktoria
-    </div>
+    <a href="https://buycoffee.to/rece" class="donate-button">Podziękuj i Wesprzyj</a>
   </div>
-</section>
+</body>
+</html>
