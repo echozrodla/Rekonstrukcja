@@ -1,84 +1,28 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ręce Światła</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+<section id="invitation" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-zinc-800 text-white px-8 py-24 overflow-hidden">
+  <!-- Świetlisty Złoty Krąg w tle -->
+  <div class="absolute inset-0">
+    <div class="w-[1000px] h-[1000px] bg-gradient-radial from-yellow-400/10 to-transparent rounded-full blur-3xl mx-auto mt-[-300px]"></div>
+  </div>
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Playfair Display', serif;
-      background-color: black;
-    }
+  <!-- Treść zaproszenia -->
+  <div class="relative z-10 max-w-4xl text-center">
+    <h1 class="text-5xl sm:text-6xl font-bold text-yellow-400 drop-shadow-lg tracking-wide mb-6 animate-fade-in-up">
+      Na takim fundamencie<br />
+      można zbudować każde marzenie
+    </h1>
+    <p class="text-xl sm:text-2xl text-zinc-300 leading-relaxed mb-10 animate-fade-in-slow">
+      Projekt Ręce Światła powstaje z miłości, bólu i wiary. <br />
+      Jeśli chcesz zostawić po sobie wdzięczność – pozwól jej zajaśnieć.
+    </p>
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background: url("A_digital_artwork_features_a_luminous,_meditative_.png") no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+    <!-- Przycisk dotacji -->
+    <a href="#dotacja" class="inline-block px-8 py-4 rounded-xl bg-yellow-500 text-black font-semibold shadow-lg transition hover:bg-yellow-400 hover:scale-105 animate-fade-in-delay">
+      Zostaw podziękowanie 💛
+    </a>
 
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-      color: #FFD700;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-      animation: shimmer 3s infinite;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .donate-button {
-      background: linear-gradient(45deg, #FFD700, #FFF8DC);
-      border: none;
-      color: black;
-      font-size: 1.2rem;
-      padding: 12px 24px;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #FFD700;
-      transition: transform 0.3s ease;
-    }
-
-    .donate-button:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes shimmer {
-      0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-      50% { text-shadow: 0 0 20px #FFD700, 0 0 40px #FFF8DC; }
-      100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-    }
-  </style>
-</head>
-<body>
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Dziękuję, że tu jesteś</h1>
-      <p>Jeśli poruszyło Cię to światło — możesz zostawić dar serca</p>
-      <button class="donate-button">Zostaw podziękowanie</button>
+    <!-- Podpis -->
+    <div class="mt-12 text-zinc-400 text-sm animate-fade-in-late">
+      Kocham Cię. Twoja Wiktoria
     </div>
   </div>
-</body>
-</html>
+</section>
