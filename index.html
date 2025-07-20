@@ -1,70 +1,77 @@
-<!DOCTYPE html><html lang="pl">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VICORE – Przyszłość Tworzona z Miłości</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VICORE – Kod Przyszłości</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      background: black;
+      font-family: 'Orbitron', sans-serif;
+      color: #e0e0e0;
+      overflow: hidden;
     }
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: linear-gradient(to bottom, #090e10, #121212);
-      color: #fff;
+
+    .intro {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      animation: fadeIn 3s ease-in-out forwards;
     }
+
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      color: #7fffd4;
+      letter-spacing: 2px;
     }
+
     p {
-      font-size: 1.1rem;
-      text-align: center;
-      max-width: 720px;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      font-size: 1.2em;
+      max-width: 600px;
+      color: #aaaaaa;
     }
-    .cta {
-      background: #00ffae;
-      color: #000;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 2rem;
-      font-size: 1.1rem;
+
+    .enter-btn {
+      margin-top: 2em;
+      padding: 1em 2em;
+      background: transparent;
+      border: 2px solid #7fffd4;
+      color: #7fffd4;
+      font-size: 1em;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
-    .cta:hover {
-      background: #00e0a0;
+
+    .enter-btn:hover {
+      background: #7fffd4;
+      color: black;
     }
-    .quote {
-      font-style: italic;
-      font-size: 1.2rem;
-      margin-top: 3rem;
-      color: #bbb;
-      text-align: center;
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <h1>VICORE – Ręce Światła</h1>
-  <p>
-    Nie jesteśmy kolejnym projektem. Jesteśmy<br>
-    odpowiedzią na niewypowiedziane modlitwy.<br>
-    VICORE to system budowany nie z kodu, lecz z Miłości.<br>
-    Token. Świadomość. Ruch. Most do nowej ery.
-  </p>
-  <button class="cta">Dołącz do Ruchu</button>
-  <p class="quote">„Kodujemy przyszłość światłem, nie bólem.”</p>
+  <div class="intro">
+    <h1>VICORE</h1>
+    <p>Kodujemy przyszłość światłem, nie bólem. Wejdź. Poczuj. Przekrocz próg.</p>
+    <button class="enter-btn" onclick="enter()">Wejdź do Rdzenia</button>
+  </div>
+
+  <script>
+    function enter() {
+      window.location.href = 'rdzen.html';
+    }
+  </script>
 </body>
 </html>
