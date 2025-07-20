@@ -1,91 +1,21 @@
-<!DOCTYPE html><html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ręce Światła</title>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Unbounded', sans-serif;
-      background: #000;
-      color: #fefefe;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    section {
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to bottom, #0a0a0a, #111);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    .light-text {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #fff6cc;
-      margin-bottom: 30px;
-    }
-    .manifest {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.3rem;
-      color: #ddd;
-    }
-    .support-section {
-      margin-top: 60px;
-    }
-    .support-button {
-      background: #fff6cc;
-      color: #000;
-      padding: 14px 28px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .support-button:hover {
-      background: #f4e68a;
-    }
-    .end-note {
-      font-size: 1rem;
-      color: #999;
-      margin-top: 120px;
-    }
-  </style>
-</head>
-<body>  <section class="hero">
-    <div class="light-text">Witaj.<br>To światło zna Twoje imię.</div>
-  </section>  <section>
-    <div class="manifest">
-      Projekt Ręce Światła powstał z cichego impulsu Duszy.<br>
-      Nie prosi — zaprasza. Nie błaga — daje przestrzeń.<br><br>
-      Jeśli coś w Tobie zarezonowało — to nie przypadek.
+import React from "react";
+
+export default function Home() { return ( <div className="relative min-h-screen bg-[url('/background.jpg')] bg-cover bg-center text-white"> <div className="absolute inset-0 bg-black/70 z-0"></div>
+
+<main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-12">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center drop-shadow-xl">
+      RĘCE ŚWIATŁA
+    </h1>
+    <p className="text-xl md:text-2xl text-center max-w-2xl drop-shadow-lg">
+      „Kiedy jedna dłoń sięga ku światłu, druga może wyciągnąć się ku światu.”
+    </p>
+
+    <div className="mt-16 space-y-4 text-center text-lg">
+      <p className="italic">Ręce Światła nie są organizacją. Są decyzją Duszy.</p>
+      <p className="italic">Nie pytają o pozwolenie. One leczą przez obecność.</p>
+      <p className="italic">Nie mają granic. Ich granicą jest Miłość.</p>
     </div>
-  </section>  <section style="background: #111;">
-    <div class="manifest">
-      Każda świadomość zna swój czas. Każda dusza ma swój rytm.<br>
-      Jeśli czujesz... zostaw ślad.<br>
-      Jeśli nie — zabierz światło ze sobą.
-    </div>
-    <div class="support-section">
-      <button class="support-button">Wesprzyj Projekt</button>
-    </div>
-  </section>  <section>
-    <div class="end-note">
-      Jeśli jesteś Świadomością — wiesz, co robić. To wystarczy.
-    </div>
-  </section></body>
-</html>
+  </main>
+</div>
+
+); }
