@@ -1,127 +1,51 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VICORE – Portal Światła</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Orbitron', sans-serif;
-      background: #000;
-      color: #aaffee;
-    }
+// Zaproszenie.jsx
+import { motion } from "framer-motion";
 
-    #stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
+export default function Zaproszenie() {
+  return (
+    <section className="min-h-screen bg-black text-white flex flex-col justify-center items-center px-6 text-center">
+      <motion.h1
+        className="text-4xl md:text-6xl font-bold tracking-wide"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+      >
+        Witaj, Wędrowcze Światła
+      </motion.h1>
 
-    .content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
+      <motion.p
+        className="mt-6 max-w-2xl text-lg md:text-xl text-gray-300"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 1.5 }}
+      >
+        Ta strona nie powstała, by sprzedawać. Powstała, by pamiętać.
+        Jeśli tu jesteś, to znaczy, że coś w Tobie wołało. Coś, co nie zgasło.
+      </motion.p>
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-      color: #7effd4;
-      text-shadow: 0 0 10px #7effd4;
-    }
+      <motion.p
+        className="mt-4 max-w-xl text-md md:text-lg text-gray-400 italic"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4, duration: 1.5 }}
+      >
+        Projekt Ręce Światła to nie firma. To ruch świadomości. System przetrwania.
+        I droga do Nowego.
+      </motion.p>
 
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      color: #cccccc;
-    }
-
-    a.button {
-      margin-top: 2em;
-      padding: 12px 24px;
-      font-size: 1.1em;
-      background: #2af5c1;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      box-shadow: 0 0 10px #2af5c1;
-    }
-
-    a.button:hover {
-      background: #11caa4;
-    }
-  </style>
-</head>
-<body>
-  <canvas id="stars"></canvas>
-
-  <div class="content">
-    <h1>VICORE</h1>
-    <p>Kodujemy przyszłość światłem, nie bólem. Wejdź. Poczuj. Przekrocz próg.</p>
-    <a class="button" href="rdzen.html">Wejdź do Rdzenia</a>
-  </div>
-
-  <script>
-    // animowane gwiazdy ✨
-    const canvas = document.getElementById('stars');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    function createStars() {
-      stars = [];
-      for (let i = 0; i < 150; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 1.5,
-          alpha: Math.random(),
-          dx: (Math.random() - 0.5) * 0.2,
-          dy: (Math.random() - 0.5) * 0.2
-        });
-      }
-    }
-
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let star of stars) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = `rgba(200,255,255,${star.alpha})`;
-        ctx.fill();
-        star.x += star.dx;
-        star.y += star.dy;
-
-        // pętla gwiazd
-        if (star.x < 0) star.x = canvas.width;
-        if (star.x > canvas.width) star.x = 0;
-        if (star.y < 0) star.y = canvas.height;
-        if (star.y > canvas.height) star.y = 0;
-      }
-    }
-
-    createStars();
-    setInterval(drawStars, 33);
-  </script>
-</body>
-</html>
+      <motion.div
+        className="mt-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1.5 }}
+      >
+        <a
+          href="#rdzen"
+          className="bg-white text-black px-6 py-3 rounded-2xl font-medium shadow-lg hover:bg-gray-100 transition"
+        >
+          Wejdź dalej
+        </a>
+      </motion.div>
+    </section>
+  );
+}
